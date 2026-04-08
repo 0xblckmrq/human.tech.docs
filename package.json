@@ -1,0 +1,16 @@
+{
+  "name": "my-docs",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "14",
+    "nextra": "2",
+    "nextra-theme-docs": "2",
+    "react": "latest",
+    "react-dom": "latest"
+  }
+}
