@@ -1,12 +1,14 @@
+import Image from 'next/image'
+
 export default {
   logo: (
-    <span style={{
-      fontWeight: 'bold',
-      fontSize: '1.2rem',
-      color: '#6366f1',
-    }}>
-      human.tech
-    </span>
+    <Image
+      src="/images/logo.png"
+      alt="human.tech logo"
+      width={140}
+      height={40}
+      style={{ objectFit: 'contain' }}
+    />
   ),
   footer: {
     text: '© 2026 human.tech. All rights reserved.',
