@@ -12,5 +12,7 @@ export default {
     type: 'separator',
     title: 'MANIFEST',
   },
-  manifest: 'Community',
+  community: 'Community',
+  'submit-manifestations': 'Submit Manifestations',
+  'covenant-principles': 'Covenant Principles',
 }
