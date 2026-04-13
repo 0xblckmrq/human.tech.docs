@@ -15,17 +15,29 @@ human.tech is an open ecosystem of protocols for digital personhood, secure key 
 
 ## Products
 
-<Cards>
-  <Cards.Card title="WaaP" href="/waap">
-    Wallet as a Protocol. One-click sign-on wallet with trustless account recovery for borderless finance and identity.
-  </Cards.Card>
-  <Cards.Card title="Human Passport" href="/passport">
-    Sybil resistance and identity verification. Verify unique humans with Stamps, ML models, or ZK identity checks.
-  </Cards.Card>
-  <Cards.Card title="Human Network" href="/network">
-    Secure cryptographic key creation using familiar authentication — web accounts, biometrics, passkeys. Built as an EigenLayer AVS.
-  </Cards.Card>
-</Cards>
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem', marginTop: '1.5rem' }}>
+  <a href="/waap" style={{ textDecoration: 'none', color: 'inherit', border: '1px solid var(--neutral-20, #e5e5e5)', borderRadius: '12px', overflow: 'hidden', transition: 'box-shadow 0.2s' }}>
+    <img src="/wallet-banner.avif" alt="Human Wallet" style={{ width: '100%', height: 180, objectFit: 'cover', display: 'block' }} />
+    <div style={{ padding: '1rem 1.25rem 1.25rem' }}>
+      <strong style={{ fontSize: '1.1rem' }}>WaaP</strong>
+      <p style={{ marginTop: '0.5rem', fontSize: '0.9rem', opacity: 0.75, lineHeight: 1.5 }}>Wallet as a Protocol. One-click sign-on wallet with trustless account recovery for borderless finance and identity.</p>
+    </div>
+  </a>
+  <a href="/passport" style={{ textDecoration: 'none', color: 'inherit', border: '1px solid var(--neutral-20, #e5e5e5)', borderRadius: '12px', overflow: 'hidden', transition: 'box-shadow 0.2s' }}>
+    <img src="/passport-banner.png" alt="Human Passport" style={{ width: '100%', height: 180, objectFit: 'cover', display: 'block' }} />
+    <div style={{ padding: '1rem 1.25rem 1.25rem' }}>
+      <strong style={{ fontSize: '1.1rem' }}>Human Passport</strong>
+      <p style={{ marginTop: '0.5rem', fontSize: '0.9rem', opacity: 0.75, lineHeight: 1.5 }}>Sybil resistance and identity verification. Verify unique humans with Stamps, ML models, or ZK identity checks.</p>
+    </div>
+  </a>
+  <a href="/network" style={{ textDecoration: 'none', color: 'inherit', border: '1px solid var(--neutral-20, #e5e5e5)', borderRadius: '12px', overflow: 'hidden', transition: 'box-shadow 0.2s' }}>
+    <img src="/network-banner.png" alt="Human Network" style={{ width: '100%', height: 180, objectFit: 'cover', display: 'block' }} />
+    <div style={{ padding: '1rem 1.25rem 1.25rem' }}>
+      <strong style={{ fontSize: '1.1rem' }}>Human Network</strong>
+      <p style={{ marginTop: '0.5rem', fontSize: '0.9rem', opacity: 0.75, lineHeight: 1.5 }}>Secure cryptographic key creation using familiar authentication — web accounts, biometrics, passkeys. Built as an EigenLayer AVS.</p>
+    </div>
+  </a>
+</div>
 
 ---
 
@@ -35,7 +47,7 @@ human.tech is an open ecosystem of protocols for digital personhood, secure key 
   <Cards.Card title="Community" href="/community">
     Join the conversation on Telegram and Discord. Contribute to the Covenant of Humanistic Technologies.
   </Cards.Card>
-  <Cards.Card title="Contact us" href="mailto:contact@human.tech">
+  <Cards.Card title="Contact us" href="/contact-us">
     Questions or partnership inquiries.
   </Cards.Card>
 </Cards>
