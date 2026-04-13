@@ -4,7 +4,7 @@ export default {
     type: 'separator',
     title: 'TECH',
   },
-  waap: 'WaaP',
+  waap: 'WaaP (Wallet as a Protocol)',
   passport: 'Human Passport',
   network: 'Human Network',
   bridge: 'Bridge (Aztec)',
