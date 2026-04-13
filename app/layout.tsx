@@ -6,8 +6,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 
 const logo = (
-  <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-    {/* Light mode logo (hidden in dark) */}
+  <>
     <img
       src="/images/human-tech-logo.svg"
       alt="human.tech"
@@ -15,7 +14,6 @@ const logo = (
       style={{ height: 28, width: 'auto' }}
       className="dark:hidden"
     />
-    {/* Dark mode logo (hidden in light) */}
     <img
       src="/images/human-tech-logo-dark.svg"
       alt="human.tech"
@@ -23,16 +21,7 @@ const logo = (
       style={{ height: 28, width: 'auto' }}
       className="hidden dark:block"
     />
-    <span style={{
-      fontFamily: "'Suisse Intl', sans-serif",
-      fontWeight: 500,
-      fontSize: 14,
-      opacity: 0.6,
-      paddingLeft: 4,
-    }}>
-      docs
-    </span>
-  </div>
+  </>
 )
 
 export const metadata: Metadata = {
