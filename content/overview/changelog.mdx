@@ -1,0 +1,50 @@
+# Changelog
+
+We are also maintaining a separate [Stamp changelog](/building-with-passport/stamps/major-concepts/credential-map-and-weights#stamp-changelog), which tracks updates to our Stamps and credentials within the Passport Stamps product.
+
+## September 9th, 2025
+
+We launched a new product called Passport Embed in beta, which enables partners to integrate Human Passport's Stamps-based verification directly on their website or dApp, ensuring that users can verify their identity without having to leave the protected user flow.
+
+You can learn more about Passport Embed via our [Passport Embed documentation](/building-with-passport/embed).
+
+## June 18th, 2025
+
+Today we renamed the Passport API to the Stamps API to better align with our new product architecture, which consists of Passport Stamps ([Stamps API](/building-with-passport/stamps/passport-api)), Passport Models ([Models API](/building-with-passport/models)), and [data services](/building-with-passport/data-services).
+
+## May 19th, 2025
+
+We launched a major update to our developer documentation. 
+
+This launch includes a significant overhaul of our product architecture, including the addition of Passport Embeds, and better organizing products into the Passport Stamps, Passport Models, and Data Services groupings. This update coincides with a major update to the Passport website, which also launched earlier this month. 
+
+With any major update to our documentation, we recommend that you review the updated documentation to ensure that you are using the latest features and best practices. We'd also love to hear your feedback! Please feel free to [submit an issue to our GitHub repo](https://github.com/passportxyz/passport-docs/issues/new/choose) if you see anything that doesn't make sense, or any broken redirects. 
+
+## May 15th, 2025
+
+We launched a new Stamp to the Passport Stamps product. 
+
+The new Stamp is called Proof of Clean Hands, and it checks to see if a given address and associated government ID is listed on any sanctions lists, including but not limited to the OFAC sanctions list, all US sanctions lists, and specific UN lists. 
+
+you can learn more about this Stamp via our [Proof of Clean Hands documentation](https://support.passport.xyz/passport-knowledge-base/stamps/how-do-i-add-passport-stamps/the-proof-of-clean-hands-stamp). If a user has verified this Stamp, you will be able to see that they verified this Stamp via the [Stamps API](/building-with-passport/stamps/passport-api) and [smart contracts](/building-with-passport/stamps/smart-contracts).
+
+## May 12th, 2025
+
+We launched a new version of our Models API aggregate model, as well as a new Base model. 
+
+The new models are available via the `GET /v2/models` endpoint, with the aggregate model being the default and the Base model being available via the `model` query parameter. 
+
+You can learn more about the models in the [Models API documentation](/building-with-passport/models).
+
+## March 12th, 2025
+
+We made several updates to Onchain Passport based on developer feedback.
+
+- We have reduced the number of onchain attestations that we write for users from two to just one. 
+- We have updated the [Onchain Passport attestation schema](/building-with-passport/stamps/smart-contracts/attestation-schema) to be more developer-friendly.
+- We have deprecated the hash that was returned with the decoder contract's `getPassport` method.
+- We've introduced a new method, `getScore` (0xdaadd662), which accepts a scorer ID (communityID) and user address, and returns the current score of a user for that scorer. This can be used by partners who are using [custom scores](/building-with-passport/stamps/custom-passport). At this time, there is no way to request Stamp-specific Custom Passport data from onchain. 
+
+## Context
+
+We produced the Changelog as part of the March 12th, 2025 release of Passport. We may backfill several product updates in the future. 

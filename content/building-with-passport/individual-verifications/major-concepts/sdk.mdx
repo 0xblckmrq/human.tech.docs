@@ -1,0 +1,53 @@
+---
+title: SDK Integration
+description: Embed Individual Verifications directly into your dApp using the Human ID SDK
+---
+
+import { Callout } from 'nextra/components'
+
+# SDK Integration
+
+The Human ID SDK allows you to embed Individual Verifications directly into your website or dApp, providing a seamless verification experience without redirecting users.
+
+## Installation
+
+```bash
+npm install @holonym-foundation/human-id-sdk
+```
+
+## Quick Start
+
+```typescript
+import { initHumanID } from '@holonym-foundation/human-id-sdk'
+
+// Initialize the SDK (client-side only, requires window)
+const humanID = initHumanID()
+
+// Request verification
+const result = await humanID.requestSBT('kyc')        // Government ID
+// or: humanID.requestSBT('phone')                    // Phone
+// or: humanID.requestSBT('biometrics')               // Biometrics
+// or: humanID.requestSBT('clean-hands')              // Proof of Clean Hands
+
+if (result?.recipient) {
+  console.log('Verified! Attestation issued to:', result.recipient)
+}
+```
+
+## Integration Options
+
+| Use Case | Recommendation |
+|----------|----------------|
+| Client-side dApps | SDK - embeds verification flow directly |
+| Server-side checks | [API](/building-with-passport/individual-verifications/api-reference) - simple true/false queries |
+| On-chain contracts | [Attestation Protocols](/building-with-passport/individual-verifications/major-concepts/attestation-protocols) - query Sign Protocol directly |
+
+## Documentation
+
+For complete documentation including querying verification status, prepaid verification credits, and React examples, see the SDK repository:
+
+<Callout type="info">
+**[View full SDK documentation on npm](https://www.npmjs.com/package/@holonym-foundation/human-id-sdk)**
+
+The README is actively maintained with the latest API reference and examples.
+</Callout>

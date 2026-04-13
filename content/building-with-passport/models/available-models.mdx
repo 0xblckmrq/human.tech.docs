@@ -1,0 +1,161 @@
+---
+title: Available models and recommended scores
+description: This page describes which models are currently accessible via the Models API, and which score thresholds should be used to identify likely Sybils or Humans.
+---
+
+import { Callout } from 'nextra/components'
+
+# Available models and recommended scores
+
+At this time, we have deployed a few different models to help verify unique humans. We plan to expand this list of models greatly, first by exploring additional Sybil detection models for several L2 partners, and then looking into other web3 verticals and reputation signals.
+
+We currently offer the following models via the Models API:
+* Aggregate unique humanity score - `aggregate`
+* Ethereum (L1) unique humanity model - `ethereum_activity`
+* NFT (L1) unique humanity model - `nft`
+* Arbitrum unique humanity model - `arbitrum`
+* Base unique humanity model - `base`
+* Optimism unique humanity model - `optimism`
+* Polygon unique humanity model - `polygon`
+* zkSync unique humanity model - `zksync`
+
+
+Each model will assign a score of -1 for addresses without enough transaction data, and 0 - 100 for those that do. A score of 0 represents likely Sybil, while a score of 100 represents likely human.
+
+For each model, we will provide a table that describes the different score thresholds you can use to gate access or classify addresses. We define the columns of those tables here:
+
+* **% of qualifying verified humans** - This metric represents the number of Passport users who qualified for the score threshold and scored a 20 or higher with the Stamp-based verification system.
+* **% of verified Sybil penetration** - This metric represents the number of verified Sybils from our list that were able to qualify for the score threshold.
+
+<Callout type="info">
+Please note that the percentages included in these tables do not necessarily translate to the percentage of participation for each individual partner.
+
+We calculate the percentage of qualifying humans and Sybils at various thresholds, derived from a curated list of collected addresses labeled as either Sybils or humans.
+</Callout>
+
+
+## Aggregate unique humanity model
+
+The aggregate unique humanity model score is the current default for the Models API, as it is broadly relevant to a variety of different ecosystems operating within the EVM ecosystem. 
+
+This model integrates individual chain model scores (Ethereum, Arbitrum, Optimism, Polygon, and zkSync) to generate the final aggregate score.
+
+Model version: 2.0
+Recommended score threshold: 50+
+
+| Score threshold | % of qualifying verified humans | % of verified Sybil penetration |
+| --------------- | ------------------------------- | ------------------------------- |
+| 15+             | 98%                             | 6%                              |
+| 25+             | 98%                             | 4%                              |
+| 50+             | 96%                             | 3%                              |
+| 75+             | 94%                             | 2%                              |
+
+
+## ETH (L1) unique humanity model
+
+This model looks at the specified wallet addresses' ETH mainnet transaction history, compares it against 50+ different features, and assigns it a score of -1 for addresses without enough transaction data, and 0 - 100 for those that do.
+
+Recommended score threshold: 50+
+
+| Score threshold | % of qualifying verified humans | % of verified Sybil penetration |
+| --------------- | ------------------------------- | ------------------------------- |
+| 15+             | 97%                             | 14%                             |
+| 25+             | 96%                             | 12%                             |
+| 50+             | 94%                             | 9%                              |
+| 75+             | 89%                             | 5%                              |
+
+
+## NFT (Ethereum L1) unique humanity model
+
+Similarly to the ETH (L1) unique humanity model, this model looks at the specified wallet addresses' NFT transaction history on Ethereum mainnet, compares it against different features, and assigns it a score of -1 for addresses without enough transaction data, and 0 - 100 for those that do.
+
+Recommended score threshold: 50+
+
+| Score threshold | % of qualifying verified humans | % of verified Sybil penetration |
+| --------------- | ------------------------------- | ------------------------------- |
+| 15+             | 98%                             | 11%                             |
+| 25+             | 97%                             | 9%                              |
+| 50+             | 95%                             | 6%                              |
+| 75+             | 92%                             | 4%                              |
+
+
+## Arbitrum unique humanity model
+
+This model looks at the specified wallet addresses' Arbitrum transaction history, compares it against different features, and assigns it a score of -1 for addresses without enough transaction data, and 0 - 100 for those that do.
+
+Recommended score threshold: 50+
+
+| Score threshold | % of qualifying verified humans | % of verified Sybil penetration |
+| --------------- | ------------------------------- | ------------------------------- |
+| 15+             | 99%                             | 21%                             |
+| 25+             | 98%                             | 14%                             |
+| 50+             | 94%                             | 7%                              |
+| 75+             | 92%                             | 6%                              |
+
+## Base unique humanity model
+
+This model looks at the specified wallet addresses' Base transaction history, compares it against different features, and assigns it a score of -1 for addresses without enough transaction data, and 0 - 100 for those that do.
+
+Recommended score threshold: 50+
+
+| Score threshold | % of qualifying verified humans | % of verified Sybil penetration |
+| --------------- | ------------------------------- | ------------------------------- |
+| 15+             | 99%                             | 21%                             |
+| 25+             | 98%                             | 14%                             |
+| 50+             | 94%                             | 7%                              |
+| 75+             | 92%                             | 6%                              |
+
+
+## Optimism unique humanity model
+
+This model looks at the specified wallet addresses' Optimism transaction history, compares it against different features, and assigns it a score of -1 for addresses without enough transaction data, and 0 - 100 for those that do.
+
+Recommended score threshold: 50+
+
+| Score threshold | % of qualifying verified humans | % of verified Sybil penetration |
+| --------------- | ------------------------------- | ------------------------------- |
+| 15+             | 98%                             | 14%                             |
+| 25+             | 97%                             | 10%                             |
+| 50+             | 96%                             | 5%                              |
+| 75+             | 94%                             | 4%                              |
+
+
+## Polygon unique humanity model
+
+This model looks at the specified wallet addresses' Polygon transaction history, compares it against different features, and assigns it a score of -1 for addresses without enough transaction data, and 0 - 100 for those that do.
+
+Recommended score threshold: 50+
+
+| Score threshold | % of qualifying verified humans | % of verified Sybil penetration |
+| --------------- | ------------------------------- | ------------------------------- |
+| 15+             | 98%                             | 15%                             |
+| 25+             | 97%                             | 11%                             |
+| 50+             | 94%                             | 7%                              |
+| 75+             | 92%                             | 6%                              |
+
+
+## zkSync unique humanity model
+
+This model looks at the specified wallet addresses' zkSync Era transaction history, compares it against different features, and assigns it a score of -1 for addresses without enough transaction data, and 0 - 100 for those that do.
+
+Recommended score threshold: 50+
+
+| Score threshold | % of qualifying verified humans | % of verified Sybil penetration |
+| --------------- | ------------------------------- | ------------------------------- |
+| 15+             | 95%                             | 22%                             |
+| 25+             | 94%                             | 16%                             |
+| 50+             | 92%                             | 8%                              |
+| 75+             | 88%                             | 7%                              |
+
+
+## Models coming soon
+
+The Passport team currently doesn't have any new models in development. 
+
+If you would like to see a new model added, please fill out this form:
+[Model Based Detection feedback form](https://docs.google.com/forms/d/e/1FAIpQLSeKUu1flQfdNSYKLBhUk6gNwdypUk5STMNsufkOZ58vWI_g9w/viewform)
+
+
+## Next Steps
+
+Learn how to use these models and score thresholds by working through our [tutorial](tutorials/double-verification), or reviewing our [API reference](api-reference).

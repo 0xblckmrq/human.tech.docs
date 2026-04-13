@@ -1,0 +1,103 @@
+---
+title: SoulBound Tokens (Legacy)
+description: Legacy documentation for SoulBound Token (SBT) integration
+---
+
+import { Callout } from 'nextra/components'
+
+# SoulBound Tokens (Legacy)
+
+<Callout type="warning">
+**EVM SBTs are legacy.** On EVM chains, SBTs have been replaced by attestations via Sign Protocol. For new EVM integrations, use the [API Reference](/building-with-passport/individual-verifications/api-reference) or [Attestation Protocols](/building-with-passport/individual-verifications/major-concepts/attestation-protocols).
+
+**Stellar SBTs are current.** On Stellar, SBTs via Soroban are the active integration method. See the [Stellar Integration](/building-with-passport/individual-verifications/supported-chains/stellar) page for complete details.
+</Callout>
+
+SoulBound Tokens (SBTs) are non-transferable tokens that were the original method for recording Individual Verifications on-chain. While SBTs are still issued for backward compatibility, attestations are now the primary verification record.
+
+## Overview
+
+SBTs are:
+- **Non-transferable**: Cannot be sent to another address
+- **Tied to identity**: Represent a verified individual
+- **Time-limited**: Expire after 1 year and must be renewed
+
+## When to Use SBTs
+
+Consider querying SBTs only if:
+- You have an existing integration that depends on SBT contracts
+- You need to verify historical verifications issued before the attestation migration
+
+For all new integrations, use [Attestation Protocols](/building-with-passport/individual-verifications/major-concepts/attestation-protocols) instead.
+
+---
+
+## Contract Addresses
+
+### Optimism (EVM)
+
+| Contract | Address |
+|----------|---------|
+| Hub V3 | `0x2AA822e264F8cc31A2b9C22f39e5551241e94DfB` |
+
+### Optimism Sepolia (Testnet)
+
+| Contract | Address |
+|----------|---------|
+| Hub V3 | `0x71712Ac158C5b25519Aad43eB9f496ae16892211` |
+
+### Stellar (Soroban)
+
+| Contract | Address |
+|----------|---------|
+| SBT Contract | `CCNTHEVSWNDOQAMXXHFOLQIXWUINUPTJIM6AXFSKODNVXWA4N7XV3AI5` |
+
+---
+
+## SBT Status Codes
+
+All chains use consistent status codes when querying SBTs:
+
+| Status | Description |
+|--------|-------------|
+| `valid` | SBT exists and is active |
+| `expired` | SBT has passed its expiration date (1 year from issuance) |
+| `revoked` | SBT has been revoked |
+| `none` | No SBT found for this address |
+
+---
+
+## Querying SBTs on Stellar
+
+For complete Stellar SBT querying examples (TypeScript and Soroban/Rust), see the [Stellar Integration](/building-with-passport/individual-verifications/supported-chains/stellar#querying-sbts) page.
+
+---
+
+## Circuit IDs
+
+Different verification types use different circuit IDs when querying SBTs:
+
+| Verification Type | Circuit ID |
+|-------------------|-----------|
+| **Government ID (KYC)** | `0x729d660e1c02e4e419745e617d643f897a538673ccf1051e093bbfa58b0a120b` |
+| **Phone** | `0xbce052cf723dca06a21bd3cf838bc518931730fb3db7859fc9cc86f0d5483495` |
+| **Biometrics** | `0x0b5121226395e3b6c76eb8ddfb0bf2f2075e7f2c6956567e84b38a223c3a3d15` |
+
+---
+
+## Migration to Attestations
+
+If you have an existing SBT integration, we recommend migrating to attestations:
+
+1. **API users**: No changes needed - the API will automatically use attestations
+2. **Direct contract queries**: Switch to [Sign Protocol queries](/building-with-passport/individual-verifications/major-concepts/attestation-protocols)
+
+For migration assistance, [contact us](https://tally.so/r/3X81KL).
+
+---
+
+## Additional Resources
+
+- [Attestation Protocols](/building-with-passport/individual-verifications/major-concepts/attestation-protocols) - Recommended integration method
+- [API Reference](/building-with-passport/individual-verifications/api-reference) - Simple verification status checks
+- [Stellar Integration](/building-with-passport/individual-verifications/supported-chains/stellar) - Stellar-specific integration guide

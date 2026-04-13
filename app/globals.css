@@ -1,0 +1,70 @@
+:root {
+  --brand-primary: #6366f1;
+  --brand-secondary: #8b5cf6;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/*
+ * CSS Override for Nextra 4 + Tailwind v4 rotation bug
+ */
+*:where(:dir(ltr), [dir=ltr], [dir=ltr] *) {
+  rotate: initial !important;
+}
+
+.x\:ltr\:rotate-180:where(:dir(ltr), [dir=ltr], [dir=ltr] *) {
+  rotate: 180deg !important;
+}
+
+.x\:rtl\:rotate-180:where(:dir(rtl), [dir=rtl], [dir=rtl] *) {
+  rotate: 180deg !important;
+}
+
+.x\:\*\:first\:rotate-180 > *:first-child {
+  rotate: 180deg !important;
+}
+
+.x\:\*\:ltr\:rotate-90:where(:dir(ltr), [dir=ltr], [dir=ltr] *) > * {
+  rotate: 90deg !important;
+}
+
+.x\:\*\:rtl\:-rotate-180:where(:dir(rtl), [dir=rtl], [dir=rtl] *) > * {
+  rotate: calc(180deg * -1) !important;
+}
+
+.x\:\*\:rtl\:-rotate-270:where(:dir(rtl), [dir=rtl], [dir=rtl] *) > * {
+  rotate: calc(270deg * -1) !important;
+}
+
+.x\:\[\[data-expanded\]\>summary\:first-child\>\&\]\:rotate-90 {
+  rotate: 90deg !important;
+}
+
+@media (max-width: 767.98px) {
+  .nextra-sidebar {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1279.98px) {
+  .nextra-toc {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  nav .nextra-scrollbar,
+  nav .nextra-search,
+  nav a[href*="github.com"],
+  nav a[href*="t.me/"] {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .nextra-hamburger {
+    display: none !important;
+  }
+}

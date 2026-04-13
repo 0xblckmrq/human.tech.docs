@@ -1,0 +1,107 @@
+---
+title: Models API reference
+description: Reference documentation for the Models API.
+---
+
+# Models API Reference
+
+The Models API enables developers to retrieve different [model-based unique humanity scores](available-models) in real-time, enabling you to score any EVM wallet address without requiring the users to create and build up a Passport score. 
+
+Need a batch or more in-depth Sybil classification and clustering analysis? Learn more about our [Data Services](/building-with-passport/data-services). 
+
+You can also experiment with the Models API using our [API playground](https://passport-api-playground.vercel.app).
+
+
+## Rate Limits
+
+|Tier |Rate limit |
+|--|--|
+|Tier 1 | *[DEFAULT]* 15 requests per 15 minutes |
+|Tier 2 | 350 requests per 15 minutes |
+|Tier 3 | 2000 requests per 15 minutes |
+
+These rate limits are completely separate from the existing Stamps API rate limits.
+
+If you'd like to request elevated rate limits, please fill out our [rate limit elevation form](https://docs.google.com/forms/d/e/1FAIpQLSe5B7zXTUQUt_aWdqTiUhjAhz56pS49Q8meuzLSgGxYTZRwAw/viewform).
+
+
+## Retrieve Model scores
+
+Use this endpoint to request a model-based score for a specified user. You can find all of the available models and recommended score thresholds via our [available models](available-models) page.
+
+* **Endpoint:** `GET /v2/models/score/{address}`
+* **Base URL:** `https://api.passport.xyz`
+* **Authentication:** API Key – Can be the same [API Key](/building-with-passport/stamps/passport-api/getting-access) that is used with the Stamps API
+
+### Parameters
+
+|Parameter |Type |Description |
+|--|--|--|
+|`address` |Path parameter| *[Required]* Pass a single EVM wallet address. |
+|`model`  |Query parameter | Include one of the following [available models](available-models) to request that model's score for the specified wallet address: <br />`aggregate`, `ethereum_activity`, `nft`, `arbitrum`, `base`, `optimism`, `polygon`, and `zksync`<br /><br />If you don't include this parameter, the API will return the `aggregate` model by default. |
+
+
+### Score Range and Methodology
+
+The Models API returns scores in the range of -1 to 100:
+
+- **-1**: Indicates insufficient data available to generate a score
+- **0-100**: Represents the score range where:
+  - Lower scores indicate higher likelihood of being a Sybil account
+  - Higher scores indicate higher likelihood of being a legitimate human account
+  - The exact interpretation of scores depends on the [specific model](available-models) being used
+
+Scores are calculated based on various on-chain and off-chain data points specific to each model. The aggregate model combines multiple model scores to provide a comprehensive assessment.
+
+### Default example
+
+#### Request
+
+```bash
+curl --request GET \
+    --url 'https://api.passport.xyz/v2/models/score/{address}?model=aggregate' \
+    --header 'Content-Type: application/json' \
+    --header 'X-API-KEY: {API KEY}'
+    ```
+
+#### Response
+
+```json
+{
+    "address": "string",
+    "details": {
+        "models": {
+            "aggregate": {
+                "score": 50 
+            }
+        } 
+    }
+}
+```
+
+
+### Arbitrum model example
+
+#### Request
+
+```bash
+curl --request GET \
+    --url 'https://api.passport.xyz/v2/models/score/{address}?model=arbitrum' \
+    --header 'Content-Type: application/json' \
+    --header 'X-API-KEY: {API KEY}'
+    ```
+
+#### Response
+
+```json
+{
+    "address": "string",
+    "details": {
+        "models": {
+            "arbitrum": {
+                "score": 50 
+            }
+        } 
+    }
+}
+```
