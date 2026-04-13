@@ -1,5 +1,5 @@
 export default {
-  index: 'Home',
+  index: 'human.tech docs',
   'tech-separator': {
     type: 'separator',
     title: 'TECH',
