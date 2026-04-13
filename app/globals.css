@@ -173,22 +173,65 @@ code, pre, kbd, samp,
   font-size: 0.85em;
 }
 
-/* --- Links --- */
+/* --- Links (scoped to content area, not nav/pagination) --- */
 
-a {
+article a,
+.nextra-content a {
   color: var(--blue-60);
 }
 
-a:hover {
+article a:hover,
+.nextra-content a:hover {
   color: var(--blue-70);
 }
 
-.dark a {
+.dark article a,
+.dark .nextra-content a {
   color: var(--blue-50);
 }
 
-.dark a:hover {
+.dark article a:hover,
+.dark .nextra-content a:hover {
   color: var(--blue-40);
+}
+
+/* --- Pagination (prev/next) card style --- */
+
+.nextra-border {
+  border-top: none !important;
+  gap: 1rem !important;
+  padding-top: 2rem !important;
+  margin-bottom: 2rem !important;
+}
+
+.nextra-border > a {
+  border: 1px solid var(--neutral-20, #e5e5e5) !important;
+  border-radius: 12px !important;
+  padding: 1.25rem 1.5rem !important;
+  max-width: 100% !important;
+  color: var(--neutral-60, #525252) !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+
+.nextra-border > a:first-child {
+  align-items: flex-end !important;
+  text-align: right !important;
+}
+
+.nextra-border > a:hover {
+  color: var(--neutral-80, #262626) !important;
+  border-color: var(--neutral-30, #d4d4d4) !important;
+}
+
+.dark .nextra-border > a {
+  border-color: var(--neutral-70, #404040) !important;
+  color: var(--neutral-40, #a3a3a3) !important;
+}
+
+.dark .nextra-border > a:hover {
+  color: var(--neutral-20, #e5e5e5) !important;
+  border-color: var(--neutral-50, #737373) !important;
 }
 
 /* --- Nextra Theme Overrides --- */
