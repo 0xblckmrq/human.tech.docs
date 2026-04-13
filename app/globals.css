@@ -166,6 +166,12 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--blue-50);
 }
 
+/* FAQ summary uses PP Hatton */
+details > summary {
+  font-family: 'PP Hatton', Georgia, 'Times New Roman', serif;
+  font-weight: 500;
+}
+
 /* Code blocks use Suisse Intl Mono */
 code, pre, kbd, samp,
 .nextra-code code {
