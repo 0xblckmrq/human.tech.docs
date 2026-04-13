@@ -52,6 +52,8 @@ export default async function RootLayout({
           }
           pageMap={pageMap}
           docsRepositoryBase="https://github.com/0xblckmrq/human.tech.docs/tree/main"
+          feedback={{ content: null }}
+          editLink={null}
           sidebar={{
             defaultMenuCollapseLevel: 2
           }}
