@@ -43,11 +43,20 @@ human.tech is an open ecosystem of protocols for digital personhood, secure key 
 
 ## Ready to build?
 
-<Cards>
-  <Cards.Card title="Community" href="/community">
-    Join the conversation on Telegram and Discord. Contribute to the Covenant of Humanistic Technologies.
-  </Cards.Card>
-  <Cards.Card title="Contact us" href="/contact-us">
-    Questions or partnership inquiries.
-  </Cards.Card>
-</Cards>
+<div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem', marginTop: '1.5rem' }}>
+  <a href="/community" style={{ textDecoration: 'none', color: 'inherit', border: '1px solid var(--neutral-20, #e5e5e5)', borderRadius: '12px', overflow: 'hidden', transition: 'box-shadow 0.2s' }}>
+    <img src="/community-banner.png" alt="Community" style={{ width: '100%', height: 180, objectFit: 'cover', display: 'block' }} />
+    <div style={{ padding: '1rem 1.25rem 1.25rem' }}>
+      <strong style={{ fontSize: '1.1rem' }}>Community</strong>
+      <p style={{ marginTop: '0.5rem', fontSize: '0.9rem', opacity: 0.75, lineHeight: 1.5 }}>Join the conversation on Telegram and Discord.</p>
+      <p style={{ marginTop: '0.5rem', fontSize: '0.9rem', opacity: 0.75, lineHeight: 1.5 }}>Contribute to the Covenant of Humanistic Technologies</p>
+    </div>
+  </a>
+  <a href="/contact-us" style={{ textDecoration: 'none', color: 'inherit', border: '1px solid var(--neutral-20, #e5e5e5)', borderRadius: '12px', overflow: 'hidden', transition: 'box-shadow 0.2s' }}>
+    <img src="/community-banner.png" alt="Contact us" style={{ width: '100%', height: 180, objectFit: 'cover', display: 'block' }} />
+    <div style={{ padding: '1rem 1.25rem 1.25rem' }}>
+      <strong style={{ fontSize: '1.1rem' }}>Contact us</strong>
+      <p style={{ marginTop: '0.5rem', fontSize: '0.9rem', opacity: 0.75, lineHeight: 1.5 }}>Questions or partnership inquiries</p>
+    </div>
+  </a>
+</div>
