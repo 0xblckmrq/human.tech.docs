@@ -1,15 +1,231 @@
-:root {
-  --brand-primary: #6366f1;
-  --brand-secondary: #8b5cf6;
+/* ============================================================
+   Holonym Brand Design System
+   Source: holonym-foundation/internal-docs/assets/brand
+   ============================================================ */
+
+/* --- Font Faces --- */
+
+@font-face {
+  font-family: 'PP Hatton';
+  src: url('/fonts/PPHatton-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
+
+@font-face {
+  font-family: 'PP Hatton';
+  src: url('/fonts/PPHatton-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Hatton';
+  src: url('/fonts/PPHatton-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url('/fonts/SuisseIntl-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url('/fonts/SuisseIntl-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url('/fonts/SuisseIntl-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Suisse Intl';
+  src: url('/fonts/SuisseIntl-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Suisse Intl Mono';
+  src: url('/fonts/SuisseIntlMono-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --- Brand Color Tokens --- */
+
+:root {
+  /* Primary brand */
+  --brand-blue: #17235E;
+  --brand-green: #006B56;
+
+  /* Blue scale */
+  --blue-5: #F5F9FF;
+  --blue-10: #E5EFFF;
+  --blue-20: #D1E3FF;
+  --blue-30: #A8CCFF;
+  --blue-40: #80B0FF;
+  --blue-50: #6394FD;
+  --blue-60: #4E77F4;
+  --blue-70: #3458EA;
+  --blue-80: #1D3ED3;
+  --blue-90: #1F39A3;
+  --blue-95: #17235E;
+
+  /* Green scale */
+  --green-5: #F1FDDD;
+  --green-10: #DBFAAE;
+  --green-20: #B0F358;
+  --green-30: #87E515;
+  --green-40: #76C71A;
+  --green-50: #63AD14;
+  --green-60: #4F920C;
+  --green-70: #437B0F;
+  --green-80: #386312;
+  --green-90: #2F5214;
+  --green-95: #183206;
+
+  /* Neutral scale */
+  --neutral-5: #FAFAFA;
+  --neutral-10: #F5F5F5;
+  --neutral-20: #E5E5E5;
+  --neutral-30: #D4D4D4;
+  --neutral-40: #A3A3A3;
+  --neutral-50: #737373;
+  --neutral-60: #525252;
+  --neutral-70: #404040;
+  --neutral-80: #262626;
+  --neutral-90: #171717;
+  --neutral-95: #0A0A0A;
+
+  /* Warning (yellow) */
+  --yellow-5: #FFFAE5;
+  --yellow-30: #FFCC00;
+  --yellow-50: #D88E03;
+  --yellow-95: #502001;
+
+  /* Error (red) */
+  --red-5: #FFF5F5;
+  --red-30: #FFB9B8;
+  --red-50: #FC6764;
+  --red-70: #C51411;
+  --red-95: #500807;
+
+  /* Semantic tokens */
+  --color-primary-text: #000000;
+  --color-secondary-text: #525252;
+  --color-accent: #17235E;
+  --color-accent-light: #E5EFFF;
+  --color-surface: #F5F5F5;
+  --color-background: #FFFFFF;
+  --color-error: #FC6764;
+  --color-success: #006B56;
+}
+
+/* --- Dark mode semantic overrides --- */
+
+.dark {
+  --color-primary-text: #FAFAFA;
+  --color-secondary-text: #A3A3A3;
+  --color-accent: #6394FD;
+  --color-accent-light: #1F39A3;
+  --color-surface: #171717;
+  --color-background: #0A0A0A;
+}
+
+/* --- Typography --- */
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Suisse Intl', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--color-primary-text);
 }
 
-/*
- * CSS Override for Nextra 4 + Tailwind v4 rotation bug
- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'PP Hatton', Georgia, 'Times New Roman', serif;
+  color: var(--brand-blue);
+}
+
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  color: var(--blue-50);
+}
+
+/* Code blocks use Suisse Intl Mono */
+code, pre, kbd, samp,
+.nextra-code code {
+  font-family: 'Suisse Intl Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: 0.85em;
+}
+
+/* --- Links --- */
+
+a {
+  color: var(--blue-60);
+}
+
+a:hover {
+  color: var(--blue-70);
+}
+
+.dark a {
+  color: var(--blue-50);
+}
+
+.dark a:hover {
+  color: var(--blue-40);
+}
+
+/* --- Nextra Theme Overrides --- */
+
+/* Sidebar active item */
+.nextra-sidebar li.active > a,
+.nextra-sidebar li.active > a:hover {
+  color: var(--brand-blue);
+}
+
+.dark .nextra-sidebar li.active > a,
+.dark .nextra-sidebar li.active > a:hover {
+  color: var(--blue-50);
+}
+
+/* Callout styling */
+.nextra-callout {
+  border-color: var(--blue-20);
+  background: var(--blue-5);
+}
+
+.dark .nextra-callout {
+  border-color: var(--blue-90);
+  background: rgba(31, 57, 163, 0.15);
+}
+
+/* Code block backgrounds */
+pre {
+  background: var(--neutral-10) !important;
+}
+
+.dark pre {
+  background: var(--neutral-90) !important;
+}
+
+/* --- Nextra 4 + Tailwind v4 rotation bug fix --- */
+
 *:where(:dir(ltr), [dir=ltr], [dir=ltr] *) {
   rotate: initial !important;
 }
@@ -41,6 +257,8 @@ body {
 .x\:\[\[data-expanded\]\>summary\:first-child\>\&\]\:rotate-90 {
   rotate: 90deg !important;
 }
+
+/* --- Responsive overrides for Nextra 4 + Tailwind v4 --- */
 
 @media (max-width: 767.98px) {
   .nextra-sidebar {
