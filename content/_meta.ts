@@ -15,4 +15,9 @@ export default {
   community: 'Community',
   'submit-manifestations': 'Submit Manifestations',
   'covenant-principles': 'Covenant Principles',
+  'humans-separator': {
+    type: 'separator',
+    title: 'HUMANS',
+  },
+  'contact-us': 'Contact Us',
 }
