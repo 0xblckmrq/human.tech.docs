@@ -1,4 +1,5 @@
 export default {
+  index: { display: 'hidden' },
   introduction: 'Introduction',
   'getting-access': 'Getting access',
   'quick-start-guide': 'Quick start',

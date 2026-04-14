@@ -1,4 +1,5 @@
 export default {
+  index: { display: 'hidden' },
   introduction: 'Introduction',
   'integration-guide': 'Developer Integration Guide',
   'implementation-patterns': 'Implementation Patterns',

@@ -1,4 +1,5 @@
 export default {
+  index: { display: 'hidden' },
   introduction: 'Introduction',
   'quick-start-guide': 'Quick start',
   'integrating-onchain-stamp-data': 'Tutorial',
