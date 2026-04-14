@@ -1,5 +1,5 @@
 export default {
-  index: 'Human Passport',
+  index: 'Home',
   overview: 'Overview',
   'building-with-passport': 'Building with Passport',
   community: 'Community',
