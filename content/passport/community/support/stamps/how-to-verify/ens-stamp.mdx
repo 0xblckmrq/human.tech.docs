@@ -1,0 +1,45 @@
+---
+title: ENS Stamp
+description: How to verify the ENS Stamp on Human Passport by linking your Ethereum Name Service domain.
+---
+
+# ENS Stamp
+
+The ENS Stamp verifies that you own an Ethereum Name Service (ENS) domain and have it set as your primary name.
+
+## Quick Facts
+
+| Detail | Value |
+| --- | --- |
+| **Cost** | ENS registration fees (paid separately) |
+| **Time** | ~2 minutes |
+| **Network** | Ethereum Mainnet |
+| **Validity** | Until ENS expires or is transferred |
+
+## Requirements
+
+- An ENS domain registered on Ethereum Mainnet
+- The ENS domain must be set as your **primary name** (reverse record)
+- The domain must use **default ENS resolvers**
+- Subdomains are **not eligible** for this stamp
+
+## Step-by-Step Verification
+
+1. Ensure your ENS domain is set as your primary name in the ENS app.
+2. Navigate to the Passport App and connect the wallet that owns the ENS domain.
+3. Select the ENS Stamp.
+4. The system will automatically detect your primary ENS name.
+5. Sign a message to confirm wallet ownership.
+6. The stamp will be added to your Passport.
+
+## Important Notes
+
+- **Primary name required** — Simply owning an ENS domain is not enough. You must set it as your primary name (reverse resolution) so that your wallet address resolves to the ENS name.
+- **Subdomains not eligible** — Only top-level ENS domains (e.g., `yourname.eth`) qualify. Subdomains (e.g., `sub.yourname.eth`) are not accepted.
+- **Default resolvers only** — Custom resolvers are not supported. Your ENS domain must use the default ENS public resolver.
+
+## Troubleshooting
+
+- **ENS not detected** — Verify that your ENS domain is set as the primary name for the connected wallet at [app.ens.domains](https://app.ens.domains).
+- **Subdomain rejected** — Only top-level `.eth` domains are eligible.
+- **Custom resolver error** — Switch your ENS domain back to the default resolver in the ENS app.

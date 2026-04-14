@@ -1,0 +1,80 @@
+---
+title: Guide to Unstaking Staked GTC Tokens
+description: Step-by-step guide to unstaking GTC tokens using Etherscan Write Contract with WalletConnect.
+---
+
+# Guide to Unstaking Staked GTC Tokens via Etherscan with WalletConnect
+
+This guide walks you through the process of unstaking your GTC tokens using the Etherscan Write Contract interface and WalletConnect.
+
+## Prerequisites
+
+- A wallet with staked GTC tokens
+- A WalletConnect-compatible wallet (e.g., MetaMask, Rainbow, Trust Wallet)
+- The round ID and amount you wish to unstake
+
+## Contract Information
+
+- **Contract address:** `0x0E3efD5BE54CC0f4C64e0D186b0af4b7F2A0e95F`
+- **Function for self-unstaking:** `unstake`
+- **Function for unstaking from others:** `unstakeUsers`
+
+## Step-by-Step Process
+
+### Step 1: Navigate to the Contract on Etherscan
+
+Go to the staking contract on Etherscan:
+
+```
+https://etherscan.io/address/0x0E3efD5BE54CC0f4C64e0D186b0af4b7F2A0e95F#writeContract
+```
+
+### Step 2: Connect Your Wallet
+
+Click **"Connect to Web3"** on the Etherscan page and select **WalletConnect** as your connection method. Scan the QR code with your wallet app or use the deep link to connect.
+
+### Step 3: Locate the Correct Function
+
+- To unstake tokens you staked on **your own identity**, find the **`unstake`** function
+- To unstake tokens you staked on **another user's identity**, find the **`unstakeUsers`** function
+
+### Step 4: Enter the Round ID
+
+Enter the `roundId` parameter as a `uint256` value. This identifies the staking round from which you want to unstake. You can find the round ID in the staking interface of the Passport App or by reading the contract's state.
+
+### Step 5: Enter the Amount
+
+Enter the `amount` parameter in **Wei format** (uint256). To convert GTC to Wei:
+
+- 1 GTC = 1,000,000,000,000,000,000 Wei (10^18)
+- 5 GTC = 5,000,000,000,000,000,000 Wei
+- 20 GTC = 20,000,000,000,000,000,000 Wei
+- 125 GTC = 125,000,000,000,000,000,000 Wei
+
+You can use a unit converter tool to calculate the exact Wei value for your desired unstake amount.
+
+### Step 6: Enter User Addresses (unstakeUsers Only)
+
+If you are using the `unstakeUsers` function to unstake tokens you placed on other users, you will also need to provide the array of wallet addresses you staked on.
+
+### Step 7: Submit the Transaction
+
+Click **"Write"** to initiate the transaction. Your wallet will prompt you to review and confirm the transaction details, including the estimated gas fee.
+
+### Step 8: Confirm and Wait
+
+Confirm the transaction in your wallet and wait for it to be processed on-chain. You can monitor the transaction status on Etherscan using the transaction hash provided by your wallet.
+
+## Troubleshooting
+
+- **Transaction reverts:** Ensure the round ID is correct and that your tokens are eligible for unstaking (they may be locked during an active Grants Round)
+- **Insufficient gas:** Make sure you have enough ETH in your wallet to cover the gas fee
+- **Wrong function:** Use `unstake` for self-staked tokens and `unstakeUsers` for tokens staked on others
+- **Amount exceeds stake:** The amount in Wei must not exceed your total staked amount for that round
+
+## Important Notes
+
+- Unstaking transactions are irreversible once confirmed
+- Tokens locked during active Grants Rounds cannot be unstaked until the round concludes
+- Gas fees apply to the unstaking transaction
+- After unstaking, the tokens will be returned to the wallet that initiated the original stake

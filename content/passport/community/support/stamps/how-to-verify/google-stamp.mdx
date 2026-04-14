@@ -1,0 +1,41 @@
+---
+title: Google Stamp
+description: How to verify the Google Stamp on Human Passport by linking your Google account.
+---
+
+# Google Stamp
+
+The Google Stamp verifies that you own a Google account through a standard OAuth flow.
+
+## Quick Facts
+
+| Detail | Value |
+| --- | --- |
+| **Cost** | Free |
+| **Time** | ~1 minute |
+| **Deduplication** | LIFO (Last In, First Out) |
+
+## Requirements
+
+- A Google account
+
+## Step-by-Step Verification
+
+1. Navigate to the Passport App and connect your wallet.
+2. Select the Google Stamp.
+3. Click the verification button to initiate the Google OAuth flow.
+4. Log in to your Google account and authorize the Passport App.
+5. The stamp will be added to your Passport.
+
+## Deduplication
+
+The Google Stamp uses **LIFO (Last In, First Out)** deduplication:
+
+- Only one Passport can hold the Google Stamp per Google account.
+- If you verify the stamp on a new Passport, it will be automatically removed from any previously linked Passport.
+
+## Troubleshooting
+
+- **OAuth failed** — Try clearing your browser cookies or using an incognito window.
+- **Wrong account** — Make sure you are signing in with the intended Google account. If you have multiple Google accounts, select the correct one during the OAuth flow.
+- **Stamp removed from old Passport** — This is expected behavior due to LIFO deduplication. Each Google account can only be linked to one Passport at a time.

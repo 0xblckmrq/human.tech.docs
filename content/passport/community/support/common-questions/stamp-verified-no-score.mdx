@@ -1,0 +1,16 @@
+---
+title: My Stamp is Verified. Why Aren't the Scores Being Added?
+description: Why a verified Stamp may not add points to your Passport score.
+---
+
+# My Stamp is Verified. Why Aren't the Scores Being Added?
+
+If your Stamp shows as verified but is not contributing points to your score, the most likely cause is that the **account or token is already linked to another Passport**.
+
+## How Deduplication Works
+
+Passport uses a **LIFO (Last In, First Out) deduplication** model. Each account or token can only be associated with one Passport at a time. If you previously linked the same account to a different wallet's Passport, the newer claim will show as verified but will not add points.
+
+## What to Do
+
+You must wait **90 days** for the original Stamp to expire on the other Passport. Once expired, the credential becomes available and your verified Stamp will begin contributing points.

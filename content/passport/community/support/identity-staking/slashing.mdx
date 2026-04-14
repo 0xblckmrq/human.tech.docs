@@ -1,0 +1,63 @@
+---
+title: "Passport Slashing: What You Need to Know"
+description: Understanding the GTC slashing mechanism, including how violations are detected, penalties are applied, and the appeals process.
+---
+
+# Passport Slashing: What You Need to Know
+
+Slashing is a mechanism that penalizes staked GTC tokens when network integrity violations are detected. It serves as a deterrent against bad actors and ensures that the trust signals created by staking remain meaningful.
+
+## Why Slashing Exists
+
+The value of GTC staking depends on the tokens being genuinely at risk. If there were no consequences for staking on fake or duplicate identities, the staking mechanism would not provide a reliable trust signal. Slashing ensures that:
+
+- Stakers are incentivized to only vouch for real, unique humans
+- Bad actors face financial consequences for attempting to game the system
+- The graph of trusted humans remains trustworthy
+
+## The Three Stages of Slashing
+
+### Stage 1: Automated Detection
+
+The Passport system uses automated detection mechanisms to identify potential violations of network integrity. These checks look for patterns consistent with sybil behavior, such as:
+
+- Multiple identities controlled by a single entity
+- Coordinated staking patterns designed to artificially inflate scores
+- Use of fraudulent credentials or Stamps
+
+When a potential violation is detected, the affected identity is flagged for review.
+
+### Stage 2: Potential GTC Removal
+
+If the violation is confirmed, the staked GTC associated with the offending identity may be removed. This applies to:
+
+- **Self-staked GTC** -- Tokens you staked on your own identity are subject to slashing
+- **Community-staked GTC** -- Tokens that others staked on the violating identity are also subject to slashing
+
+This means that if you stake on someone who is later found to be in violation, your staked tokens are at risk as well.
+
+### Stage 3: Appeals Process
+
+If your tokens have been slashed, you have the right to appeal the decision. The appeals process provides an opportunity to present evidence that the slashing was made in error.
+
+- Appeals must be submitted within the designated appeal window
+- You will need to provide evidence supporting your case
+- Appeals are reviewed by the Passport team
+- If your appeal is successful, your slashed tokens will be restored
+
+## Who Is Affected by Slashing?
+
+Slashing affects **both the violator and anyone who staked on the violator's identity**:
+
+- If you self-stake and are found in violation, your self-staked GTC is slashed
+- If others community-staked on your identity and you are found in violation, their staked GTC is also at risk
+- If you community-stake on someone else and that person is found in violation, the GTC you staked on them may be slashed
+
+This shared-risk model incentivizes community stakers to only vouch for people they genuinely know and trust.
+
+## How to Protect Yourself
+
+- **Only stake on people you personally know and trust** -- Do not stake on strangers or identities you cannot verify
+- **Maintain your own identity integrity** -- Ensure your Stamps and credentials are legitimate
+- **Monitor your staking activity** -- Regularly check the status of your stakes in the Passport App
+- **Act promptly if slashed** -- If you believe a slashing was unjust, file an appeal within the allowed window

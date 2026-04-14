@@ -1,0 +1,17 @@
+export default {
+  'what-is-a-sybil': 'What is a Sybil?',
+  'what-is-unique-humanity': 'What is Unique Humanity?',
+  'increase-score': 'How Can I Increase My Score?',
+  'how-score-calculated': 'How is My Score Calculated?',
+  'stamp-vs-credential': 'Stamp vs Credential',
+  'stamps-expired': 'Why Have My Stamps Expired?',
+  'access-passport-json': 'Access Passport JSON',
+  'stamp-verified-no-score': 'Stamp Verified but No Score',
+  'binance-babt-issue': 'Binance BABT Issue',
+  'coinbase-not-recognised': 'Coinbase Not Recognised',
+  'wallet-hacked': 'Wallet Hacked',
+  'why-onchain': 'Why Put Passport Onchain?',
+  'zero-points-verified': 'Zero Points for Verified Stamp',
+  'score-discrepancy': 'Score Discrepancy',
+  'integrate-passport': 'Can I Integrate Passport?',
+}

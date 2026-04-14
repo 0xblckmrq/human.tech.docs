@@ -1,0 +1,41 @@
+---
+title: LinkedIn Stamp
+description: How to verify the LinkedIn Stamp on Human Passport by linking your LinkedIn account.
+---
+
+# LinkedIn Stamp
+
+The LinkedIn Stamp verifies that you own a LinkedIn account through a standard OAuth flow.
+
+## Quick Facts
+
+| Detail | Value |
+| --- | --- |
+| **Cost** | Free |
+| **Time** | ~1 minute |
+| **Deduplication** | LIFO (Last In, First Out) |
+
+## Requirements
+
+- A LinkedIn account
+
+## Step-by-Step Verification
+
+1. Navigate to the Passport App and connect your wallet.
+2. Select the LinkedIn Stamp.
+3. Click the verification button to initiate the LinkedIn OAuth flow.
+4. Log in to your LinkedIn account and authorize the Passport App.
+5. The stamp will be added to your Passport.
+
+## Deduplication
+
+The LinkedIn Stamp uses **LIFO (Last In, First Out)** deduplication:
+
+- Only one Passport can hold the LinkedIn Stamp per LinkedIn account.
+- If you verify the stamp on a new Passport, it will be automatically removed from any previously linked Passport.
+
+## Troubleshooting
+
+- **OAuth failed** — Try clearing your browser cookies or using an incognito window.
+- **Wrong account** — If you have multiple LinkedIn accounts, ensure you are signing in with the intended one during the OAuth flow.
+- **Stamp removed from old Passport** — This is expected behavior due to LIFO deduplication. Each LinkedIn account can only be linked to one Passport at a time.

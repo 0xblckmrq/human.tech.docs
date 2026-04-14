@@ -1,0 +1,45 @@
+---
+title: Passport Embed FAQ
+description: Frequently asked questions about Passport Embed, including how scoring works, costs, and common use cases.
+---
+
+# Passport Embed FAQ
+
+## What does Passport Embed do?
+
+Passport Embed functions as a **privacy-preserving Captcha for web3**. It verifies that users are unique humans without requiring them to solve puzzles or complete traditional Captcha challenges. Instead, it evaluates identity signals and onchain activity to produce a trust score.
+
+## How does scoring work?
+
+Passport Embed uses the same scoring system as the Passport App. Users receive a Unique Humanity Score based on their verified credentials and onchain activity. The standard threshold is a score of **20** -- users at or above this level are considered likely unique humans.
+
+## What does Passport Embed cost?
+
+- **Basic Passport verification** is free for both users and integrators
+- **Government ID and biometric Stamps** cost approximately **$5** for users who choose to add them for a higher score
+- **Onchain minting** of credentials costs approximately **$3** in gas fees
+
+There are no fees charged to developers for integrating Passport Embed.
+
+## What are common use cases for Passport Embed?
+
+Passport Embed is well-suited for any scenario where you need to verify that participants are unique humans:
+
+- **Airdrops** -- Ensure token distributions reach real individuals rather than sybil accounts
+- **DAO Governance** -- Enforce one-person-one-vote in decentralized governance
+- **Grants Programs** -- Prevent gaming of quadratic funding and grant allocation systems
+- **Forums and Communities** -- Reduce spam and bot activity in community spaces
+- **NFT Distributions** -- Limit minting to verified unique humans
+- **Rewards Programs** -- Prevent abuse of loyalty and incentive programs
+
+## Do users need to create a Passport to use Embed?
+
+Users interact with Passport Embed directly on the integrating site. Many users can pass verification based on their existing onchain history without needing to manually add Stamps through the Passport App.
+
+## What data does the integrating site receive?
+
+The integrating site receives only the verification result (pass/fail) or the numeric score. No personal details, Stamp specifics, or identity data are shared with the site operator.
+
+## Can Passport Embed work alongside other verification methods?
+
+Yes. Passport Embed can be used as a standalone verification layer or combined with other identity solutions to create a multi-layered approach to sybil resistance.

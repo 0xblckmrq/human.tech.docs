@@ -1,0 +1,41 @@
+---
+title: What is Passport Embed?
+description: Learn about Passport Embed, a React component that enables in-line website verification using the same backend as the Passport App.
+---
+
+# What is Passport Embed?
+
+Passport Embed is a React component that provides in-line website verification. It uses the same backend infrastructure as the [Passport App](https://app.passport.xyz), giving sites a seamless way to verify their users' humanity.
+
+## How It Works
+
+When a user interacts with Passport Embed on a website, the component evaluates their identity signals and produces a Unique Humanity Score. A score above **20** indicates that the user is likely a unique human.
+
+The component only shares a **yes/no verification result** or the **numeric score** with the integrating site. Personal details are never exposed to the website operator.
+
+## Privacy-Preserving by Design
+
+Passport Embed is built with user privacy as a core principle:
+
+- Only verification status (yes/no) or the numeric score is shared with sites
+- No personally identifiable information is ever transmitted to integrators
+- Users maintain full control over their identity data
+
+## Verification Without Stamps
+
+Many users can achieve a passing score without manually adding Stamps. Passport Embed leverages onchain history and existing activity signals, meaning users with established blockchain activity may already meet the verification threshold automatically.
+
+## Free to Integrate
+
+Passport Embed is free for developers to integrate into their applications. There are no licensing fees or per-verification charges. Simply add the React component to your project and configure it to suit your verification needs.
+
+## Getting Started
+
+To integrate Passport Embed into your site:
+
+1. Install the Passport Embed React component in your project
+2. Configure the component with your application settings
+3. Set your desired score threshold (recommended: 20)
+4. Deploy and start verifying users
+
+For detailed integration instructions, refer to the developer documentation.
