@@ -27,13 +27,13 @@ To see what each Stamp looks like, scroll down to the Stamps section. When you a
 
 The "Passport Protocol" refers to the infrastructure that enables web3 citizens to create their own Passport, prove their decentralized identity and access Passport-gated projects. It is all the tooling that enables developers to build Passport gating into their apps.
 
-Web3 citizens interface with the Passport Protocol through the Passport holder dApp at [app.passport.xyz](https://app.passport.xyz). Developers can use the [Stamps API](/building-with-passport/stamps/passport-api) to easily integrate Human Passport into their apps.
+Web3 citizens interface with the Passport Protocol through the Passport holder dApp at [app.passport.xyz](https://app.passport.xyz). Developers can use the [Stamps API](/passport/building-with-passport/stamps/passport-api) to easily integrate Human Passport into their apps.
 
 
 
 ### Passport-Gating
 
-"Passport gating" means integrating the Passport Protocol into an app for the purpose of screening accounts to keep out bots, bad actors, or simply real people who don't meet a certain [threshold](/building-with-passport/stamps/major-concepts/scoring-thresholds) of trustworthiness.
+"Passport gating" means integrating the Passport Protocol into an app for the purpose of screening accounts to keep out bots, bad actors, or simply real people who don't meet a certain [threshold](/passport/building-with-passport/stamps/major-concepts/scoring-thresholds) of trustworthiness.
 
 **Usage:**
 
@@ -41,7 +41,7 @@ Web3 citizens interface with the Passport Protocol through the Passport holder d
 * "Some examples of Passport-gated dApps include: Snapshot, Bankless Academy, and Gitcoin Grants."
 * "Because this community is gated with Human Passport, it is able to ask for pieces of proof of not just identity via services like BrightID, but also reputation via services like POAP."
 
-See our [quick start guide](/building-with-passport/stamps/passport-api/quick-start-guide) to learn how to gate your project.
+See our [quick start guide](/passport/building-with-passport/stamps/passport-api/quick-start-guide) to learn how to gate your project.
 
 
 
@@ -90,7 +90,7 @@ The code snippet below shows a single Stamp. This particular Stamp proves owners
 
 
 <Callout type="info">
-Stamps are added and removed from the the Passport service as the product evolves. To learn more, please visit our [Stamps overview for developers](/building-with-passport/stamps/create-a-stamp).
+Stamps are added and removed from the the Passport service as the product evolves. To learn more, please visit our [Stamps overview for developers](/passport/building-with-passport/stamps/create-a-stamp).
 
 The weights assigned to individual Stamps in the Passport scoring app can also change if re-weighting is likely to improve the overall Sybil defence efficacy of the Scorer.
 </Callout>
@@ -129,7 +129,7 @@ This `hash` is a unique identifier that is generated for all VCs issued by the P
 
 As a developer, you don't need to implement any logic for deduplicating Stamps if you use the default scorer. The deduplication is done server-side. However, if you are building a custom scorer you may want to store the hashes and deduplicate Stamps yourself to prevent users from submitting the same set of Stamps in multiple Passports.
 
-More details about Passport deduplication can be found on our [Deduplicating Stamps](/building-with-passport/stamps/major-concepts/deduplicating-stamps) page.
+More details about Passport deduplication can be found on our [Deduplicating Stamps](/passport/building-with-passport/stamps/major-concepts/deduplicating-stamps) page.
 
 
 
@@ -158,7 +158,7 @@ curl --request GET 'https://api.scorer.gitcoin.co/registry/stamps/{address}?incl
 
 This request could return a large amount of data if the given address owns a lot of Stamps. In this case, it could be useful to paginate the response, which means the API will return a subset of the total data. You can do this by adding `&limit=x` to the API request, where `x` is the number of elements (in this example, Stamp objects) to return in each response.
 
-More detail, including an explanation of how to navigate paginated responses, is provided in the [API reference](/building-with-passport/stamps/passport-api/api-reference).
+More detail, including an explanation of how to navigate paginated responses, is provided in the [API reference](/passport/building-with-passport/stamps/passport-api/api-reference).
 
 
 
@@ -170,7 +170,7 @@ A Sybil is a fake user. Many applications require confidence that each of their 
 
 ### Individual Verifications
 
-[Individual Verifications](/building-with-passport/individual-verifications) are privacy-preserving identity checks that use zero-knowledge proofs to verify specific attributes about a user without exposing personal data. Unlike Stamps which aggregate multiple signals into a composite score, Individual Verifications provide targeted proofs for use cases requiring stronger identity guarantees or regulatory compliance.
+[Individual Verifications](/passport/building-with-passport/individual-verifications) are privacy-preserving identity checks that use zero-knowledge proofs to verify specific attributes about a user without exposing personal data. Unlike Stamps which aggregate multiple signals into a composite score, Individual Verifications provide targeted proofs for use cases requiring stronger identity guarantees or regulatory compliance.
 
 Available verification types include:
 - **Government ID (KYC)** - Verify identity via government-issued ID
@@ -184,10 +184,10 @@ Upon successful verification, users receive a non-transferable SoulBound Token (
 
 ### Zero-Knowledge Proofs (ZKP)
 
-A zero-knowledge proof (ZKP) is a cryptographic method that allows one party to prove a statement is true without revealing any information beyond the statement's validity. For example, a user can prove they passed government ID verification without disclosing their name, ID number, or any other personal data. In Human Passport, ZKPs power [Individual Verifications](/building-with-passport/individual-verifications/introduction) — users generate compact cryptographic proofs client-side, which are verified on-chain as attestations. The underlying personal data never leaves the user's device. See [How Zero-Knowledge Proofs Work](/building-with-passport/individual-verifications/introduction#how-zero-knowledge-proofs-work) for a developer-oriented explanation.
+A zero-knowledge proof (ZKP) is a cryptographic method that allows one party to prove a statement is true without revealing any information beyond the statement's validity. For example, a user can prove they passed government ID verification without disclosing their name, ID number, or any other personal data. In Human Passport, ZKPs power [Individual Verifications](/passport/building-with-passport/individual-verifications/introduction) — users generate compact cryptographic proofs client-side, which are verified on-chain as attestations. The underlying personal data never leaves the user's device. See [How Zero-Knowledge Proofs Work](/passport/building-with-passport/individual-verifications/introduction#how-zero-knowledge-proofs-work) for a developer-oriented explanation.
 
 
 
 ### SoulBound Tokens (SBT)
 
-SoulBound Tokens are non-transferable blockchain tokens that represent identity credentials or achievements. Unlike regular tokens or NFTs, SBTs cannot be transferred or sold - they are permanently bound to the wallet that received them. Human Passport uses SBTs to represent completed [Individual Verifications](/building-with-passport/individual-verifications). When a user completes a verification (such as government ID or biometrics), they receive an SBT on their chosen blockchain (Optimism or Stellar) that proves their verification status. SBTs expire after one year and can be renewed by completing the verification process again.
+SoulBound Tokens are non-transferable blockchain tokens that represent identity credentials or achievements. Unlike regular tokens or NFTs, SBTs cannot be transferred or sold - they are permanently bound to the wallet that received them. Human Passport uses SBTs to represent completed [Individual Verifications](/passport/building-with-passport/individual-verifications). When a user completes a verification (such as government ID or biometrics), they receive an SBT on their chosen blockchain (Optimism or Stellar) that proves their verification status. SBTs expire after one year and can be renewed by completing the verification process again.

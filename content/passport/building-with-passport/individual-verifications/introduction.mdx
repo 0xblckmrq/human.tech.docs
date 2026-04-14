@@ -9,15 +9,15 @@ import { Callout } from 'nextra/components'
 
 Individual Verifications let users complete identity checks once and reuse them across any integrated application. Powered by zero-knowledge proofs, verifications are privacy-preserving — apps learn that a user passed KYC, not their name or ID number.
 
-Unlike [Stamps-based verification](/building-with-passport/stamps), which aggregates multiple signals into a composite score, Individual Verifications provide specific, targeted proofs such as government ID verification, phone number uniqueness, or biometric liveness checks.
+Unlike [Stamps-based verification](/passport/building-with-passport/stamps), which aggregates multiple signals into a composite score, Individual Verifications provide specific, targeted proofs such as government ID verification, phone number uniqueness, or biometric liveness checks.
 
 <Callout type="info">
 **Choosing the right verification approach**
 
 Human Passport offers multiple verification methods:
-- **[Stamps](/building-with-passport/stamps)** - Aggregate multiple signals into a composite score. Best for general Sybil resistance.
-- **[Models](/building-with-passport/models)** - ML-powered scoring with zero user friction. Best for frictionless verification.
-- **[Individual Verifications](/building-with-passport/individual-verifications)** - Privacy-preserving KYC, phone, biometrics, and AML checks. Best for regulatory compliance or stronger identity guarantees.
+- **[Stamps](/passport/building-with-passport/stamps)** - Aggregate multiple signals into a composite score. Best for general Sybil resistance.
+- **[Models](/passport/building-with-passport/models)** - ML-powered scoring with zero user friction. Best for frictionless verification.
+- **[Individual Verifications](/passport/building-with-passport/individual-verifications)** - Privacy-preserving KYC, phone, biometrics, and AML checks. Best for regulatory compliance or stronger identity guarantees.
 </Callout>
 
 ## Why Individual Verifications?
@@ -41,7 +41,7 @@ Human Passport offers multiple verification methods:
 Think of it like a bouncer checking your ID at a bar. The bouncer confirms you're over 21, but the bar never sees your name, address, or birthdate. ZKPs work the same way — cryptographic proof of a fact, with zero personal data disclosed.
 </Callout>
 
-Each verification type (Gov ID, Phone, Biometrics, Clean Hands) uses a different ZK circuit — a specific proof program. See [Attestation Protocols](/building-with-passport/individual-verifications/major-concepts/attestation-protocols) for circuit and schema IDs.
+Each verification type (Gov ID, Phone, Biometrics, Clean Hands) uses a different ZK circuit — a specific proof program. See [Attestation Protocols](/passport/building-with-passport/individual-verifications/major-concepts/attestation-protocols) for circuit and schema IDs.
 
 ## Available Verification Types
 
@@ -70,9 +70,9 @@ Individual Verifications issue attestations via [Sign Protocol](https://sign.glo
 
 - **Optimism** - Primary chain with full verification support
 - **Base** - Clean Hands and Biometrics attestations
-- **Stellar** - Soroban smart contract integration (Gov ID, Phone) — [Stellar Integration](/building-with-passport/individual-verifications/supported-chains/stellar)
+- **Stellar** - Soroban smart contract integration (Gov ID, Phone) — [Stellar Integration](/passport/building-with-passport/individual-verifications/supported-chains/stellar)
 
-See the [Supported Chains](/building-with-passport/individual-verifications/supported-chains) page for chain-specific details.
+See the [Supported Chains](/passport/building-with-passport/individual-verifications/supported-chains) page for chain-specific details.
 
 ## Basic Integration Flow
 
@@ -92,7 +92,7 @@ curl 'https://api.holonym.io/sybil-resistance/gov-id/optimism?user=USER_ADDRESS&
 { "result": false }
 ```
 
-That's it — one API call. For on-chain verification, query Sign Protocol attestations directly. See [API Reference](/building-with-passport/individual-verifications/api-reference) for all endpoints or [Attestation Protocols](/building-with-passport/individual-verifications/major-concepts/attestation-protocols) for on-chain queries.
+That's it — one API call. For on-chain verification, query Sign Protocol attestations directly. See [API Reference](/passport/building-with-passport/individual-verifications/api-reference) for all endpoints or [Attestation Protocols](/passport/building-with-passport/individual-verifications/major-concepts/attestation-protocols) for on-chain queries.
 
 ## Integration Options
 
@@ -100,15 +100,15 @@ Choose the integration method that best fits your use case:
 
 | Use Case | Method | Description |
 |----------|--------|-------------|
-| **Simple verification checks** | [API Reference](/building-with-passport/individual-verifications/api-reference) | Query verification status with simple true/false responses |
-| **On-chain contracts** | [Attestation Protocols](/building-with-passport/individual-verifications/major-concepts/attestation-protocols) | Query Sign Protocol attestations directly |
-| **Client-side dApps** | [SDK Integration](/building-with-passport/individual-verifications/major-concepts/sdk) | Embed verification flows in your application |
-| **Stellar integration** | [Stellar Integration](/building-with-passport/individual-verifications/supported-chains/stellar) | Query SBTs on Stellar via Soroban |
+| **Simple verification checks** | [API Reference](/passport/building-with-passport/individual-verifications/api-reference) | Query verification status with simple true/false responses |
+| **On-chain contracts** | [Attestation Protocols](/passport/building-with-passport/individual-verifications/major-concepts/attestation-protocols) | Query Sign Protocol attestations directly |
+| **Client-side dApps** | [SDK Integration](/passport/building-with-passport/individual-verifications/major-concepts/sdk) | Embed verification flows in your application |
+| **Stellar integration** | [Stellar Integration](/passport/building-with-passport/individual-verifications/supported-chains/stellar) | Query SBTs on Stellar via Soroban |
 
 ## Next Steps
 
-- [API Reference](/building-with-passport/individual-verifications/api-reference) - Query verification status via REST API
-- [Attestation Protocols](/building-with-passport/individual-verifications/major-concepts/attestation-protocols) - Query attestations directly from Sign Protocol
-- [Testing](/building-with-passport/individual-verifications/major-concepts/testing) - Test your integration on Base Sepolia
-- [Stellar Integration](/building-with-passport/individual-verifications/supported-chains/stellar) - Integrate on Stellar via Soroban SBTs
+- [API Reference](/passport/building-with-passport/individual-verifications/api-reference) - Query verification status via REST API
+- [Attestation Protocols](/passport/building-with-passport/individual-verifications/major-concepts/attestation-protocols) - Query attestations directly from Sign Protocol
+- [Testing](/passport/building-with-passport/individual-verifications/major-concepts/testing) - Test your integration on Base Sepolia
+- [Stellar Integration](/passport/building-with-passport/individual-verifications/supported-chains/stellar) - Integrate on Stellar via Soroban SBTs
 - [API Playground](https://passport-api-playground.vercel.app) - Try out API endpoints interactively

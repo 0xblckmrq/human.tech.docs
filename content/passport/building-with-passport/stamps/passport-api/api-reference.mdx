@@ -54,8 +54,8 @@ Access starts with Tier 1. If you need an elevation, please [request higher rate
 There are several key concepts you should be aware of when using the Stamps API:
 
 * **Timeouts:** The Stamps API endpoints have a timeout of 60 seconds. This means that if a request to one of these endpoints does not receive a response within 60 seconds, the request will be aborted. If your request times out, you should set up retry logic by calling the API again after a short delay, typically increasing the delay for each subsequent retry.
-* **Pagination:** Some requests return a large amount of data. To effectively retrieve this data, you will need to paginate the response. For more information, see [API pagination](/building-with-passport/stamps/major-concepts/api-pagination).
-* **Data dictionary:** For definitions of the data types used in Stamps API v2, see the [Data dictionary](/building-with-passport/stamps/passport-api/data-dictionary) page.
+* **Pagination:** Some requests return a large amount of data. To effectively retrieve this data, you will need to paginate the response. For more information, see [API pagination](/passport/building-with-passport/stamps/major-concepts/api-pagination).
+* **Data dictionary:** For definitions of the data types used in Stamps API v2, see the [Data dictionary](/passport/building-with-passport/stamps/passport-api/data-dictionary) page.
 
 ## Available endpoints
 
@@ -113,7 +113,7 @@ curl --request GET \
 }
 ```
 
-Learn more about the [data dictionary](/building-with-passport/stamps/major-concepts/data-dictionary).
+Learn more about the [data dictionary](/passport/building-with-passport/stamps/passport-api/data-dictionary).
 
 
 ### Retrieve historical score for a single address
@@ -189,7 +189,7 @@ If you would like to retrieve the metadata for all available Stamps, please use 
 | Name               | Required | Description                                                                                                                                                                                                      |
 | ------------------ | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `include_metadata` | No       | Returns optional `metadata` object with additional details about connected Stamps.<br /><br />Format: `true`/`false`<br />Default: `false`                                                                             |
-| `limit`            | No       | Paginates response, providing the given number of Stamps per page (For example, use `limit=3` to request three Stamps) Learn more about [API pagination](/building-with-passport/stamps/major-concepts/api-pagination). |
+| `limit`            | No       | Paginates response, providing the given number of Stamps per page (For example, use `limit=3` to request three Stamps) Learn more about [API pagination](/passport/building-with-passport/stamps/major-concepts/api-pagination). |
 | `token`            | No       | Pass the `next` or `prev` value from the previous response to get the next or previous page of results.                                                                                                          |
 
 

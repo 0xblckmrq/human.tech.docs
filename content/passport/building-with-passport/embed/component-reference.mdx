@@ -78,7 +78,7 @@ Fetches the user's Passport score and verification status for a given wallet add
 
 <Callout type="info">
 **Please note:**<br />
-If you are simply displaying a user's score, relying on the data returned by the `usePassportScore` should suffice.<br /><br />However, since frontend values can be spoofed, don’t trust it for sensitive program protection. Instead, use `isPassing` as a signal to trigger a backend verification request via the [Stamps API](/building-with-passport/stamps/passport-api). The Stamps API will actually confirm the score server-side, meaning you can confidently unlock protected features based on the user's score.
+If you are simply displaying a user's score, relying on the data returned by the `usePassportScore` should suffice.<br /><br />However, since frontend values can be spoofed, don’t trust it for sensitive program protection. Instead, use `isPassing` as a signal to trigger a backend verification request via the [Stamps API](/passport/building-with-passport/stamps/passport-api). The Stamps API will actually confirm the score server-side, meaning you can confidently unlock protected features based on the user's score.
 </Callout>
 
 #### Returns
@@ -119,7 +119,7 @@ return (
 );
 ```
 
-Please refer to our [tutorial](/building-with-passport/embed/tutorials/protecting-sensitive-programs-with-passport-embed) to see an example of how to use this hook with a request to the Stamps API to confirm the score server-side (recommended for protecting sensitive programs).
+Please refer to our [tutorial](/passport/building-with-passport/embed/tutorials/protecting-sensitive-programs-with-passport-embed) to see an example of how to use this hook with a request to the Stamps API to confirm the score server-side (recommended for protecting sensitive programs).
 
 
 ## Usage Example
@@ -139,7 +139,7 @@ import { PassportScoreWidget, DarkTheme } from "@human.tech/passport-embed";
 />
 ```
 
-To review a more in-depth example, see our [tutorial](/building-with-passport/embed/tutorials/protecting-sensitive-programs-with-passport-embed). You can also use the **[Embed Playground](https://embed-playground.passport.xyz)** to configure the widget visually and generate code.
+To review a more in-depth example, see our [tutorial](/passport/building-with-passport/embed/tutorials/protecting-sensitive-programs-with-passport-embed). You can also use the **[Embed Playground](https://embed-playground.passport.xyz)** to configure the widget visually and generate code.
 
 ## Component Behavior
 

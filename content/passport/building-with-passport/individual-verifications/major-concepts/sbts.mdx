@@ -8,9 +8,9 @@ import { Callout } from 'nextra/components'
 # SoulBound Tokens (Legacy)
 
 <Callout type="warning">
-**EVM SBTs are legacy.** On EVM chains, SBTs have been replaced by attestations via Sign Protocol. For new EVM integrations, use the [API Reference](/building-with-passport/individual-verifications/api-reference) or [Attestation Protocols](/building-with-passport/individual-verifications/major-concepts/attestation-protocols).
+**EVM SBTs are legacy.** On EVM chains, SBTs have been replaced by attestations via Sign Protocol. For new EVM integrations, use the [API Reference](/passport/building-with-passport/individual-verifications/api-reference) or [Attestation Protocols](/passport/building-with-passport/individual-verifications/major-concepts/attestation-protocols).
 
-**Stellar SBTs are current.** On Stellar, SBTs via Soroban are the active integration method. See the [Stellar Integration](/building-with-passport/individual-verifications/supported-chains/stellar) page for complete details.
+**Stellar SBTs are current.** On Stellar, SBTs via Soroban are the active integration method. See the [Stellar Integration](/passport/building-with-passport/individual-verifications/supported-chains/stellar) page for complete details.
 </Callout>
 
 SoulBound Tokens (SBTs) are non-transferable tokens that were the original method for recording Individual Verifications on-chain. While SBTs are still issued for backward compatibility, attestations are now the primary verification record.
@@ -28,7 +28,7 @@ Consider querying SBTs only if:
 - You have an existing integration that depends on SBT contracts
 - You need to verify historical verifications issued before the attestation migration
 
-For all new integrations, use [Attestation Protocols](/building-with-passport/individual-verifications/major-concepts/attestation-protocols) instead.
+For all new integrations, use [Attestation Protocols](/passport/building-with-passport/individual-verifications/major-concepts/attestation-protocols) instead.
 
 ---
 
@@ -69,7 +69,7 @@ All chains use consistent status codes when querying SBTs:
 
 ## Querying SBTs on Stellar
 
-For complete Stellar SBT querying examples (TypeScript and Soroban/Rust), see the [Stellar Integration](/building-with-passport/individual-verifications/supported-chains/stellar#querying-sbts) page.
+For complete Stellar SBT querying examples (TypeScript and Soroban/Rust), see the [Stellar Integration](/passport/building-with-passport/individual-verifications/supported-chains/stellar#querying-sbts) page.
 
 ---
 
@@ -90,7 +90,7 @@ Different verification types use different circuit IDs when querying SBTs:
 If you have an existing SBT integration, we recommend migrating to attestations:
 
 1. **API users**: No changes needed - the API will automatically use attestations
-2. **Direct contract queries**: Switch to [Sign Protocol queries](/building-with-passport/individual-verifications/major-concepts/attestation-protocols)
+2. **Direct contract queries**: Switch to [Sign Protocol queries](/passport/building-with-passport/individual-verifications/major-concepts/attestation-protocols)
 
 For migration assistance, [contact us](https://tally.so/r/3X81KL).
 
@@ -98,6 +98,6 @@ For migration assistance, [contact us](https://tally.so/r/3X81KL).
 
 ## Additional Resources
 
-- [Attestation Protocols](/building-with-passport/individual-verifications/major-concepts/attestation-protocols) - Recommended integration method
-- [API Reference](/building-with-passport/individual-verifications/api-reference) - Simple verification status checks
-- [Stellar Integration](/building-with-passport/individual-verifications/supported-chains/stellar) - Stellar-specific integration guide
+- [Attestation Protocols](/passport/building-with-passport/individual-verifications/major-concepts/attestation-protocols) - Recommended integration method
+- [API Reference](/passport/building-with-passport/individual-verifications/api-reference) - Simple verification status checks
+- [Stellar Integration](/passport/building-with-passport/individual-verifications/supported-chains/stellar) - Stellar-specific integration guide
