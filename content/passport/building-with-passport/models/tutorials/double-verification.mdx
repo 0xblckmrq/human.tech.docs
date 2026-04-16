@@ -166,7 +166,7 @@ export default function Passport() {
         }
         console.log("PASSPORT SCORE = ", roundedScore)
       } else {
-        // if the user has no score, display a message letting them know to submit thier passporta
+        // if the user has no score, display a message letting them know to submit their passport
         console.log('No score available, please add Stamps to your Passport and then resubmit.')
       }
     } catch (err) {
@@ -203,9 +203,9 @@ export default function Passport() {
 
 ```
 
-## Adding the Etheruem Activity scorer
+## Adding the Ethereum Activity scorer
 
-The ETH activity scorer is accessed via a public API endpoint passing the user's Ethereum address as a query parameter. To start integrating this into your app, you can add the base URL  for the API endpoint as a constant at the top of the script, just below the Passport URI definition.
+The ETH activity scorer is accessed via a public API endpoint passing the user's Ethereum address as a query parameter. To start integrating this into your app, you can add the base URL for the API endpoint as a constant at the top of the script, just below the Passport URI definition.
 
 ```typescript
 const ETHEREUM_ACTIVITY_SCORE_URI = 'https://api.passport.xyz/v2/models/score/'
@@ -244,7 +244,7 @@ Start with the API request. You can call this function `getEthereumScore()`. Ins
         setEthereumScore(score.toString())
 
       } else {
-        // if the user has no score, display a message letting them know to submit thier passporta
+        // if the user has no score, display a message letting them know to submit their passport
         console.log('No score available, please add Stamps to your Passport and then resubmit.')
       }
     } catch (err) {
